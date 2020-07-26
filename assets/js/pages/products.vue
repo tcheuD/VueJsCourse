@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <legend-component />
+                    <legend-component title="TODO PUT LEGEND HERE" />
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@ import LegendComponent from '../components/legend';
 export default {
     name: 'Products',
     components: {
-        LegendComponent
+        LegendComponent,
     },
     data() {
         return {
