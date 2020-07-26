@@ -1,15 +1,6 @@
 import Vue from 'vue';
-
-const template = '<h1>Hello {{ firstName }} Vue!</h1>';
+import App from './pages/products';
 
 new Vue({
-    el: '#app',
-    data() {
-        return {
-            firstName: 'Ryan',
-        };
-    },
-    render(h) {
-        return Vue.compile(template).render.call(this, h);
-    }
-});
+    render: (h) => h(App),
+}).$mount('#app');
