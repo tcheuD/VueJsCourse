@@ -65,6 +65,13 @@ Encore
     .enableSassLoader()
     .enableVueLoader()
 
+    // gives better module CSS naming in dev
+    .configureCssLoader((config) => {
+        if (!Encore.isProduction() && config.modules) {
+            config.modules.localIdentName = '[name]_[local]_[hash:base64:5]';
+        }
+    })
+
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 
