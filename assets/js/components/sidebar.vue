@@ -42,12 +42,6 @@
 <script>
 export default {
     name: 'Sidebar',
-    props: {
-        testProp: {
-            type: String,
-            default: 'default Value',
-        },
-    },
     data() {
         return {
             collapsed: false,
@@ -62,9 +56,6 @@ export default {
                 },
             ],
         };
-    },
-    created() {
-        console.log(this);
     },
     methods: {
         toggleCollapled() {
