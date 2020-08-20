@@ -25,6 +25,7 @@
         "lint": "node_modules/.bin/eslint assets/** --ignore-pattern *.scss --ignore-pattern *.gif --ignore-pattern *.png"
     },
     "dependencies": {
+        "axios": "^0.19.2",
         "vue": "^2.6.11",
         "vue-loader": "^15.9.3",
         "vue-template-compiler": "2.6.11"
