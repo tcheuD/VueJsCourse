@@ -31,7 +31,7 @@
         <div class="d-flex justify-content-end">
             <button
                 class="btn btn-secondary btn-sm"
-                @click="toggleCollapled"
+                @click="$emit('toggle-collapsed')"
                 v-text="collapsed ? '>>' : '<< Collapse'"
             />
         </div>
@@ -75,11 +75,6 @@ export default {
             }
 
             return classes;
-        },
-    },
-    methods: {
-        toggleCollapled() {
-            this.collapsed = !this.collapsed;
         },
     },
 };
