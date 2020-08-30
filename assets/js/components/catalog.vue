@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h1>
-                    Products
+                    <title-component />
                 </h1>
             </div>
         </div>
@@ -22,12 +22,14 @@
 import { fetchProducts } from '@/services/products-service';
 import LegendComponent from '@/components/legend';
 import ProductList from '@/components/product-list';
+import TitleComponent from '@/components/title';
 
 export default {
     name: 'Catalog',
     components: {
         LegendComponent,
         ProductList,
+        TitleComponent,
     },
     props: {
         currentCategoryId: {
