@@ -1,21 +1,20 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-12">
-                <h1>
-                    <title-component
-                        :current-category-id="currentCategoryId"
-                        :categories="categories"
-                    />
-                </h1>
+            <div class="col-3">
+                <title-component
+                    :current-category-id="currentCategoryId"
+                    :categories="categories"
+                />
+            </div>
+            <div class="col-9">
+                <SearchBar />
             </div>
         </div>
-
         <product-list
             :products="products"
             :loading="loading"
         />
-
         <div class="row">
             <legend-component :title="legend" />
         </div>
@@ -25,6 +24,7 @@
 import { fetchProducts } from '@/services/products-service';
 import LegendComponent from '@/components/legend';
 import ProductList from '@/components/product-list';
+import SearchBar from '@/components/search-bar';
 import TitleComponent from '@/components/title';
 
 export default {
@@ -32,6 +32,7 @@ export default {
     components: {
         LegendComponent,
         ProductList,
+        SearchBar,
         TitleComponent,
     },
     props: {
@@ -48,20 +49,17 @@ export default {
         return {
             products: [],
             loading: false,
-            legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
+            legend: 'Shipping takes 10-13 weeks, and products probably won\'t work',
         };
     },
     async created() {
         this.loading = true;
-
         let response;
         try {
             response = await fetchProducts(this.currentCategoryId);
-
             this.loading = false;
         } catch (e) {
             this.loading = false;
-
             return;
         }
         this.products = response.data['hydra:member'];
